@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5">
+    <title>Live Log Dashboard</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f6f8; color: #333; margin: 0; padding: 2em; }
+        .container { max-width: 1200px; margin: auto; background: white; padding: 2em; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #1a73e8; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5em; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1.5em; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid #ddd; }
+        th { background-color: #eef4fd; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .status { font-size: 0.9em; color: #5f6368; margin-top: 1em; }
+        .log-level-INFO { color: #34a853; }
+        .log-level-WARN { color: #fbbc05; }
+        .log-level-ERROR { color: #ea4335; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Live Log Dashboard 🚀</h1>
+        <p class="status">Showing the 50 most recent logs. Page refreshes every 5 seconds.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Level</th>
+                    <th>Service</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr>
+                    <td>{{ log[0].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                    <td class="log-level-{{ log[1] }}"><b>{{ log[1] }}</b></td>
+                    <td>{{ log[2] }}</td>
+                    <td>{{ log[3] }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">No logs found. Try sending some data with producer.py!</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

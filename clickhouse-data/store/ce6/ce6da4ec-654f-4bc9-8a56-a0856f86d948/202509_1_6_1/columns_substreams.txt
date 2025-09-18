@@ -1,0 +1,18 @@
+columns substreams version: 1
+6 columns:
+1 substreams for column `timestamp`:
+	timestamp
+3 substreams for column `log_level`:
+	log_level.dict_prefix
+	log_level.dict
+	log_level
+3 substreams for column `service`:
+	service.dict_prefix
+	service.dict
+	service
+1 substreams for column `message`:
+	message
+1 substreams for column `trace_id`:
+	trace_id
+1 substreams for column `user_id`:
+	user_id

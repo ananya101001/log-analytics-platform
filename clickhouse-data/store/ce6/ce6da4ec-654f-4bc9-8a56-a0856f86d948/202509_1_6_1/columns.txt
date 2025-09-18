@@ -1,0 +1,8 @@
+columns format version: 1
+6 columns:
+`timestamp` DateTime64(3, 'UTC')
+`log_level` LowCardinality(String)
+`service` LowCardinality(String)
+`message` String
+`trace_id` UUID
+`user_id` String
