@@ -36,7 +36,8 @@ Application teams often lack a centralized, real-time system to analyze high-vol
 ### Architecture Diagram
 
 The architecture is designed to be scalable, durable, and performant, decoupling the log producers from the ingestion and analytics layers.
-![System Architecture Diagram](Screenshot 2025-09-08 at 11.55.02 AM.png)
+![System Architecture Diagram](./assets/Screenshot%202025-09-08%20at%2011.55.02%E2%80%AFAM.png)
+
 
 ### Technology Justification
 *(From Page 2 of the project PDF)*
